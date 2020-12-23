@@ -3,6 +3,6 @@
 
 #include <Arduino.h>
 
-float getDistance(int trigPin, int echoPin);
+float getDistanceSonar(int trigPin, int echoPin);
 
 #endif
