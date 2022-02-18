@@ -30,4 +30,6 @@ class OLEDDISPLAY
     void println(unsigned long, int = DEC);
     void println(double, int = 2);
     void println(void);
-}
+};
+
+#endif

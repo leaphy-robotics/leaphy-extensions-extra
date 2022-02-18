@@ -68,7 +68,7 @@ void OLEDDISPLAY::print(double n, int digits)
 
 void OLEDDISPLAY::println(void)
 {
-  display.println(void);
+  display.println();
 }
 
 void OLEDDISPLAY::println(const String &s)
