@@ -10,6 +10,13 @@ class OLEDDISPLAY
 {
     public:
     OLEDDISPLAY();
+	bool begin();
+	void clearDisplay();
+	void setTextSize(int size);
+	void setTextColor(uint16_t c);
+	void setCursor(int16_t x, int16_t y);
+	void display();
+	
     void print(const String &);
     void print(const char[]);
     void print(char);
