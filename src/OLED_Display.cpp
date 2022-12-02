@@ -147,3 +147,8 @@ void OLEDDISPLAY::println(double num, int digits)
 {
 	display_internal.println(num, digits);
 }
+
+void OLEDDISPLAY::drawBitmap(int16_t x, xint16_t y, const uint8_t * bitmap, int16_t w, int16_t h, uint16_t color)
+{
+	display_internal.drawBitmap(x, y, bitmap, w, h, color)
+}
