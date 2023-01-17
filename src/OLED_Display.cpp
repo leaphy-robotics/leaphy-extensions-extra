@@ -147,3 +147,29 @@ void OLEDDISPLAY::println(double num, int digits)
 {
 	display_internal.println(num, digits);
 }
+
+void OLEDDISPLAY::drawBitmap(int16_t x, xint16_t y, const uint8_t * bitmap, int16_t w, int16_t h, uint16_t color)
+{
+	display_internal.drawBitmap(x, y, bitmap, w, h, color);
+}
+
+void OLEDDISPLAY::drawPixel(int16_t x, int16_t y, uint16_t color)
+{
+	display_internal.drawPixel(x, y, color);
+}
+
+void OLEDDISPLAY::drawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1, uint16_t color)
+{
+	display_internal.drawLine(x0, y0, x1, y1, color);
+}
+
+void OLEDDISPLAY::drawRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color)
+{
+	display_internal.drawRect(x, y, w, h, color);
+}
+
+void OLEDDISPLAY::drawCircle(int16_t x0, int16_t y0, int16_t r, uint16_t color)
+{
+	display_internal.drawCircle(x0, y0, r, color);
+}
+
