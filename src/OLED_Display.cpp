@@ -17,12 +17,7 @@ bool OLEDDISPLAY::begin()
 	{ 
 		return false;
 	}
-	
-	display_internal.clearDisplay();
-	display_internal.setTextSize(1);             // Normal 1:1 pixel scale
-	display_internal.setTextColor(SSD1306_WHITE);        // Draw white text
-	display_internal.setCursor(0,0);             // Start at top-left corner
-	display_internal.println(F("Leaphy OLED"));
+
 	display_internal.display();
 	
 	return true;
