@@ -42,3 +42,7 @@ void CompassSensor::setDataRate(lis2mdl_rate_t rate) {
 void CompassSensor::reset() {
     CompassSensor::mag.reset();
 }
+
+void CompassSensor::update() {
+  CompassSensor::mag.getEvent(&data);
+}
