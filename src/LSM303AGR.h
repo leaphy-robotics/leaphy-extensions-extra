@@ -20,6 +20,7 @@ class CompassSensor {
         lis2mdl_rate_t getDataRate();
         void setDataRate(lis2mdl_rate_t rate);
         void reset();
+        void update();
 };
 
 #endif
