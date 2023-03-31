@@ -10,7 +10,7 @@
 CompassSensor::CompassSensor() {
   CompassSensor::mag = Adafruit_LIS2MDL();
   // initiate the event
-  CompassSensor::mag.getEvent(&data);
+  CompassSensor::mag.getEvent(data);
 }
 
 bool CompassSensor::begin(uint8_t i2c_addr = _ADDRESS_MAG, TwoWire *wire = &Wire) {
@@ -44,5 +44,5 @@ void CompassSensor::reset() {
 }
 
 void CompassSensor::update() {
-  CompassSensor::mag.getEvent(&data);
+  CompassSensor::mag.getEvent(data);
 }
