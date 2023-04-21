@@ -12,15 +12,15 @@
 #include "Arduino.h"
 #include "Wire.h"
 
-#define SGP30_OK                        0x00
-#define SGP30_ERROR_CRC                 0xFF
-#define SGP30_ERROR_I2C                 0xFE
+#define AirQuality_OK                        0x00
+#define AirQuality_ERROR_CRC                 0xFF
+#define AirQuality_ERROR_I2C                 0xFE
 
 
-class SGP30
+class AirQuality
 {
 public:
-  explicit SGP30(TwoWire *wire = &Wire);
+  explicit AirQuality(TwoWire *wire = &Wire);
   bool     begin();
   bool     isConnected();
   void     GenericReset();
