@@ -1,4 +1,5 @@
 #include "LightSensor.h"
+#include <Arduino.h>
 
 LIGHTSENSOR::LIGHTSENSOR(int pin)
 {
@@ -7,11 +8,11 @@ LIGHTSENSOR::LIGHTSENSOR(int pin)
 
 bool LIGHTSENSOR::begin()
 {
-    pinMode(A0, INPUT);
+    pinMode(pin, INPUT);
     return true;
 }
 
 int LIGHTSENSOR::read()
 {
-    return analogRead(A0);
+    return analogRead(pin);
 }

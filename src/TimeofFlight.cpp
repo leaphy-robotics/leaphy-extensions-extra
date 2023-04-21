@@ -1,15 +1,9 @@
 #include "TimeofFlight.h"
 #include "Adafruit_VL53L0X.h"
 
-TimeOfFlight::TimeOfFlight(int a0, int a1)
-{
-    this->pin = pin;
-}
-
 bool TimeOfFlight::begin()
 {
     if (!sensor.begin()) {
-        Serial.println(F("Failed to boot VL53L0X"));
         return false;
     }
     return true;
