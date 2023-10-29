@@ -1,7 +1,8 @@
 #include "ledstrip.h"
+
 LEDSTRIP::LEDSTRIP(uint8_t p, uint16_t tot){
   strip.setPin(p);
-  strip.setTotalLeds(tot);
+  strip.updateLength(tot);
   pinMode(pin, OUTPUT);
   digitalWrite(pin, LOW);
 }
@@ -143,8 +144,8 @@ uint32_t LEDSTRIP::Wheel(byte WheelPos) {
    return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
   }
 }
-    void LEDSTRIP::basis(uint8_t led, uint8_t r, uint8_t g, uint8_t b){
-      strip.setPixelColor(led, r, g, b );
-    strip.show();
 
-      }
+void LEDSTRIP::basis(uint8_t led, uint8_t r, uint8_t g, uint8_t b){
+  strip.setPixelColor(led, r, g, b );
+  strip.show();
+}

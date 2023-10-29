@@ -1,0 +1,39 @@
+name: Validate Pull Requests
+
+on:
+  pull_request: 
+    branches: 
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Arduino CLI
+        uses: arduino/setup-arduino-cli@v1
+
+      - name: Run Arduino Linter
+        uses: arduino/arduino-lint-action@v1
+        with:
+          library-manager: update
+
+      - name: Install libraries
+        run:
+          |
+          # Install arduino AVR
+          arduino-cli core install arduino:avr
+          # Install dependencies
+          libs=$(cat library.properties | grep depends | sed 's/depends=//g')
+          IFS=',' read -ra lib <<< "$libs"
+          for i in "${lib[@]}"; do
+            arduino-cli lib install "$i"
+          done
+
+      - name: Compile test sketch
+        run:
+          |
+          # Perform test compile
+          arduino-cli compile tests --fqbn arduino:avr:uno --log --library . --clean
