@@ -1,6 +1,7 @@
 #include "ledstrip.h"
 
 LEDSTRIP::LEDSTRIP(uint8_t p, uint16_t tot){
+  strip.begin();
   strip.setPin(p);
   strip.updateLength(tot);
   pinMode(pin, OUTPUT);
