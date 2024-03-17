@@ -33,7 +33,7 @@ void leaphyProgram() {
   display.println("Hallo");
   display.display();
   delay(500);
-  mp3.playwithVolume(0x01, 0x1a);
+  mp3.playWithVolume(0x01, 0x1a);
 }
 
 void setup() {
