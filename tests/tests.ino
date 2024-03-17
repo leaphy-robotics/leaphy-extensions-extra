@@ -1,11 +1,13 @@
 #include "OLED_Display.h"
 #include "ledstrip.h"
+#include "RedMP3.h"
 
 LEDSTRIP ledstrip(1, 60);
 
 #include "Adafruit_TCS34725.h"
 
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_24MS, TCS34725_GAIN_16X);
+MP3 mp3(7, 8);
 uint16_t RawColor_Red, RawColor_Green, RawColor_Blue, RawColor_Clear;
 byte Color_Red, Color_Green, Color_Blue, Color_Clear;
 
@@ -30,6 +32,8 @@ void leaphyProgram() {
   display.setCursor(0,0);
   display.println("Hallo");
   display.display();
+  delay(500);
+  mp3.playWithVolume(0x01, 0x1a);
 }
 
 void setup() {
